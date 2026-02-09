@@ -1,0 +1,24 @@
+# Use qmd for homework in order to get nice pdf to submit 
+# Create a jupyter notebook and run the code to see the outputs; once code chunks are creating tables/figures as desired, then go to terminal and run "run-quarto convert NOTEBOOKNAME.ipynb"
+# Should get "converted to NOTEBOOKNAME.qmd" 
+# qmd has code and not output 
+# you can add "#| include: false" to hide parts of the code in the final pdf 
+# when you are ready to turn into pdf run "run-quarto rander NOTEBOOKNAME.qmd"
+# get datasets done this week because next week will be analysis 
+
+# for function, it must live in the same location as the notebook for creating the datasets by year 
+# might want to use R code instead of python because pandas is very slow for creating tables 
+
+# Matching and Weighting 
+# Self-selection bias = bias of people in treatment group
+# We need the same covariates between groups (ex. imagine we can measure ability on a scale of 0-1 and everyone from Emory is 0.5-1 and everyone from UNT is 0.3-0.7; we have overlap in people 0.5-0.7) = common support 
+# Four different types of estimation for selection on observables assumption 
+# Trying to find a matched control for people; someone at Emory who is the same type as someone at UNT; ex: for hospital care impact on health we would need to find someone who is ill and does go to the hopsital and someone who is sickand doesn't go to the hospital 
+# Propensity scores collapse multiple variables into one measure but we will be focusing on one variable 
+# Subclassification: broader version of matching by looking at categories like high-ability, medium-ability, and low-ability rather than using the scale from 0-1; then we take the weighted average of the differences across the groups; issue with subclassification is if we don't have anyone in one of the groups, we can't take the difference (no one in UNT is in the high ability group) and this issue becomes more apparent as the groups get more granular
+# At this point in class he yells at everyone for working on hw
+# ATE = average treatment effect
+# Matching: matching on education and finding the impact of a training program; hs education is the control group; Finding the average of those who received treatment and the average of those who didn't receive treatment; not using the person who goes to college because there's only one and they have no matches; we find the effect = the actual value - the average of the other treatment group; average the treatment effect; if we match on continuous variables gets more complex; three different methods to define the "nearest" match; scaled euclidean distance is more accurate that euclidean distance because we need to account for scale of different variables such as income vs years of schooling; best method if mahalanobis distance because it accounts for if the variables we are testing on are correlated; computer will do this computation for us 
+# Skipping bias correction; not neccessary for class
+# Weighting: propensity score is your predicted probably of receiving the treamtent; ex: based on your parents income, high school, and ability, what is your probability of coming to emory; based on your probability we create a weighted average; people who have a 0.9 chance of coming to emory have less weight than a person who had 0.5 chance
+# It's 9:45 please let us go

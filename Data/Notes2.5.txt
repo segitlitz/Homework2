@@ -1,0 +1,8 @@
+Matching causes you to lose a lot of data
+Weighting allows you to keep all the data points 
+When Di=1 then Yi=Y1
+We are going to divide by probability of being treated
+If someone is treated but they have a high probability of treatment, they will be weighted less
+If someone is treated but they had a low probability of treatment, they will be weighted more 
+
+Exact matching: finding counties with the exact same number of Medicare eligible (exact=true)
